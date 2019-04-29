@@ -1,0 +1,36 @@
+{
+  "name": "backend-tigransargsyan",
+  "version": "1.0.0",
+  "description": "Backend API for Black Hole",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.16.5",
+    "pg": "^7.10.0",
+    "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "jest": "^24.7.1",
+    "nodemon": "^1.18.11",
+    "supertest": "^4.0.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "test": " DB_MODE=testing jest --watch --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bw3-black-hole/Backend-TigranSargsyan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bw3-black-hole/Backend-TigranSargsyan/issues"
+  },
+  "homepage": "https://github.com/bw3-black-hole/Backend-TigranSargsyan#readme"
+}
