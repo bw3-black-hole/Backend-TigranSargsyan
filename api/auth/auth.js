@@ -10,17 +10,17 @@ module.exports = server => {
   function register(req, res) {
     // implement user registration
     let user = req.body;
-    //console.log('1. req.body:',user)
+    console.log('1. req.body:',user)
     if(user.username && user.password) {
       const hash = bcrypt.hashSync(user.password, 3)
       user.password = hash
-      //console.log('3. hashed', user)
+      console.log('2. hashed', user)
       db('main').insert(user).then(result => {
-        //console.log('3. result:',result)
+        console.log('3. result:', result)
         const [id] = result;
         db('main').where({id}).first().then(userAdded => {
           res.status(200).json(userAdded)
-          //console.log('4. userAdded:', userAdded)
+          console.log('4. userAdded:', userAdded)
         })
         .catch(err => { 
           console.log(err)
