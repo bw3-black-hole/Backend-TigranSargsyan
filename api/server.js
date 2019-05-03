@@ -24,7 +24,7 @@ server.post('/api/create', async (req, res) => {
     try {
         const Data = req.body
         console.log(Data)
-        if(Data.entry, Data.username, Data.password) {
+        if(Data.entry) {
             const result = await db.insert(Data)
             console.log('result:', result)
             res.status(201).json({message: `${result} added to the database`})
