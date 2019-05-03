@@ -9,23 +9,22 @@ module.exports = {
 };
 
 function getAll() {
-    return db('main')
+    return db('entry')
   }
 
 function insert(data) {
-    return db('main')
-    .where('id', id)
+    return db('entry')
     .insert(data)
 }
 
 function update(id, changes){
-    return db('main')
+    return db('entry')
     .where('id', id)
     .update(changes)
 }
 
 function remove(id){
-    return db('main')
+    return db('entry')
     .where('id', id)
     .del()
 }

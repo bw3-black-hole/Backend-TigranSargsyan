@@ -15,10 +15,10 @@ module.exports = server => {
       const hash = bcrypt.hashSync(user.password, 3)
       user.password = hash
       console.log('2. hashed', user)
-      db('main').insert(user).then(result => {
+      db('auth').insert(user).then(result => {
         console.log('3. result:', result)
         const [id] = result;
-        db('main').where({id}).first().then(userAdded => {
+        db('auth').where({id}).first().then(userAdded => {
           res.status(200).json(userAdded)
           console.log('4. userAdded:', userAdded)
         })
@@ -39,7 +39,7 @@ module.exports = server => {
   function login(req, res) {
     // implement user login
     let { username, password } = req.body;
-    db('main').where('username', username).first().then(user => {
+    db('auth').where('username', username).first().then(user => {
       console.log('user object:', user)
       if(user && bcrypt.compareSync(password, user.password)) {
         //console.log('user.password:', user.password, 'password:', password)

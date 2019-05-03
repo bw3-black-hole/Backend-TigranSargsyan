@@ -23,7 +23,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "test": " DB_MODE=testing jest --watch --verbose"
+    "test": "cross-env DB_ENV=testing jest --watch"
   },
   "repository": {
     "type": "git",
